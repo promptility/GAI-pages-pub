@@ -1,0 +1,83 @@
+{
+  "operation": {
+    "log_level": "info"
+  },
+  "__meta__": {
+    "target_prio_str_keys": [
+      "prompt"
+    ],
+    "input_prio_str_keys": [],
+    "input_prio_keys": []
+  },
+  "oai": {
+    "open_ai_base": "api.openai.com",
+    "open_ai_endpoint": "/v1/chat/completions",
+    "open_ai_key": "REPLACE_WITH_OPENAI_API_KEY",
+    "model": "gpt-4.1-mini",
+    "temperature": 0.2,
+    "max_tokens": 2000,
+    "max_seconds": 120,
+    "http_timeout": 60,
+    "max_tool_iterations": 10
+  },
+  "alternates": {
+    "default": ""
+  },
+  "command_generate": {
+    "persona": "You are a helpful coding assistant.",
+    "keep_prompt_text": true
+  },
+  "command_edits": {
+    "persona": "Edit the supplied text according to the instruction. Return only the edited text.",
+    "keep_prompt_text": false
+  },
+  "tools": {
+    "http_echo": {
+      "location": "http://127.0.0.1:8765/echo",
+      "type": "function",
+      "function": {
+        "name": "http_echo",
+        "description": "Echo a message through the local HTTP service.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": "string",
+              "description": "Message to echo."
+            }
+          },
+          "required": [
+            "message"
+          ],
+          "additionalProperties": false
+        },
+        "strict": true
+      }
+    }
+  },
+  "mcp": {
+    "python_executable": "/absolute/path/to/mcp-env/bin/python",
+    "request_timeout": 10,
+    "discovery_timeout": 10,
+    "stdio": [
+      {
+        "local": {
+          "server_config": {
+            "command": "/absolute/path/to/mcp-env/bin/python",
+            "args": [
+              "/absolute/path/to/sublime-GAI/examples/mcp_demo.py"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "mcp_use": [
+    "local"
+  ],
+  "tool_use": [
+    "http_echo",
+    "local::echo",
+    "local::add"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "provider_models": {
+    "cache_hours": 24,
+    "connections": {
+      "OpenRouter": {
+        "open_ai_base": "openrouter.ai",
+        "open_ai_endpoint": "/api/v1/chat/completions",
+        "open_ai_key": "YOUR_OPENROUTER_API_KEY",
+        "model": "YOUR_CHAT_MODEL"
+      },
+      "Vercel": {
+        "open_ai_base": "ai-gateway.vercel.sh",
+        "open_ai_endpoint": "/v1/chat/completions",
+        "open_ai_key": "YOUR_VERCEL_API_KEY",
+        "model": "YOUR_CHAT_MODEL"
+      },
+      "Requesty": {
+        "open_ai_base": "router.requesty.ai",
+        "open_ai_endpoint": "/v1/chat/completions",
+        "open_ai_key": "YOUR_REQUESTY_API_KEY",
+        "model": "YOUR_CHAT_MODEL"
+      },
+      "Portkey": {
+        "open_ai_base": "api.portkey.ai",
+        "open_ai_endpoint": "/v1/chat/completions",
+        "open_ai_key": "YOUR_PORTKEY_API_KEY",
+        "model": "@YOUR_INTEGRATION/YOUR_CHAT_MODEL"
+      },
+      "Azure": {
+        "open_ai_base": "YOUR_RESOURCE.openai.azure.com",
+        "open_ai_endpoint": "/openai/v1/chat/completions",
+        "open_ai_key": "YOUR_AZURE_INFERENCE_KEY",
+        "model": "YOUR_DEPLOYMENT_NAME",
+        "model_discovery": {
+          "subscription_id": "YOUR_SUBSCRIPTION_ID",
+          "resource_group": "YOUR_RESOURCE_GROUP",
+          "account": "YOUR_RESOURCE",
+          "access_token": "YOUR_AZURE_MANAGEMENT_ACCESS_TOKEN"
+        }
+      },
+      "Bedrock": {
+        "open_ai_base": "bedrock-mantle.us-east-1.api.aws",
+        "open_ai_endpoint": "/v1/chat/completions",
+        "open_ai_key": "YOUR_BEDROCK_API_KEY",
+        "model": "YOUR_CHAT_MODEL"
+      },
+      "Vertex": {
+        "open_ai_base": "us-central1-aiplatform.googleapis.com",
+        "open_ai_endpoint": "/v1beta1/projects/YOUR_PROJECT/locations/us-central1/endpoints/openapi/chat/completions",
+        "open_ai_key": "YOUR_GOOGLE_ACCESS_TOKEN",
+        "model": "google/YOUR_GEMINI_MODEL",
+        "model_discovery": {"publisher": "google", "auth": "bearer"}
+      },
+      "Gemini API": {
+        "open_ai_base": "generativelanguage.googleapis.com",
+        "open_ai_endpoint": "/v1beta/openai/chat/completions",
+        "open_ai_key": "YOUR_GEMINI_API_KEY",
+        "model": "YOUR_GEMINI_MODEL",
+        "model_discovery": {"auth": "api_key"}
+      }
+    }
+  }
+}

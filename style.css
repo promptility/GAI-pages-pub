@@ -19,4 +19,10 @@ dd { margin: 0; }
 li { margin: 10px 0; }
 nav { display: flex; gap: 24px; flex-wrap: wrap; padding: 32px 0; border-top: 1px solid #cccfc8; }
 footer { padding: 24px 0 40px; font-size: .8rem; }
+.doc { padding: 28px 0 56px; }
+.doc article { overflow-wrap: anywhere; }
+.doc pre { overflow-x: auto; padding: 16px; background: #eceae3; border-radius: 5px; }
+.doc code { font-size: .88em; }
+.doc table { display: block; overflow-x: auto; border-collapse: collapse; }
+.doc th, .doc td { padding: 8px 12px; border: 1px solid #cccfc8; text-align: left; }
 @media (max-width: 540px) { body { padding: 0 20px; } main { padding-top: 36px; } dl { grid-template-columns: 1fr; gap: 8px; } dd { margin-bottom: 16px; } }

@@ -1,0 +1,33 @@
+{
+  "schema_version": "4.0.0",
+  "packages": [
+    {
+      "name": "GAI",
+      "description": "General AI",
+      "author": "Promptility",
+      "homepage": "https://promptility.github.io/GAI-pages-pub/",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "date": "2026-10-31 03:00:00",
+          "sublime_text": ">=4213",
+          "python_versions": [
+            "3.14"
+          ],
+          "platforms": [
+            "*"
+          ],
+          "libraries": [
+            "Jinja2",
+            "MarkupSafe",
+            "regex",
+            "pyzmq",
+            "Markdown"
+          ],
+          "sha256": "51aaa56f8df1a9adf0323c1cebc3cb5ce038fb2154aab4f35f75b62b9403cb95",
+          "url": "https://sos-ch-dk-2.exo.io/promptility-assets/GAI/releases/v1.0.0/gai.sublime-package?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=EXO79309f0ee12d77aee4685818%2F20261031%2Fch-dk-2%2Fs3%2Faws4_request&X-Amz-Date=20261031T223639Z&X-Amz-Expires=17280000&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=d37a6c380d21fbe80ddb32c90626eff14176531b18a56244822843e180e8790a\n"
+        }
+      ]
+    }
+  ]
+}

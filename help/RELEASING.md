@@ -4,6 +4,12 @@ Run these instructions from a checkout containing the desired fixes. This branch
 
 ## Prepare a version
 
+You can bump `VERSION` on a release-preparation branch independently of the
+currently public release. `website/release.json` selects the archive offered on
+the public website and may remain on an older version. Updating it is a separate
+publication step after manually uploading the release archive to S3; see the
+website publication procedure.
+
 `VERSION` is the version source and must contain three-component SemVer, such as `0.8.0` or `0.8.1`. A prerelease may use `0.9.0-dev.1`; Package Control clients need matching prerelease settings to receive it. The migration from the former `0.8` metadata normalizes that value to `0.8.0` without publishing a new release.
 
 Update `VERSION` only when preparing the actual release. The first-load upgrade pane shows `RELEASE_NOTES.md`, titled with `VERSION`, once per installed version. Major releases must include the **complete changelog between releases**, rather than only selected highlights. Generate the full notes for every release, including major releases:
@@ -74,7 +80,7 @@ Check for `plugin.py`, `gai/async_worker.py`, `.python-version`, `dependencies.j
 
 ## GitHub workflow and tag publication
 
-The release workflow builds on pushes to `master`, `dev/*`, and `v*` tags, and on manual dispatch. Branch/manual runs upload a workflow artifact. Tag runs also create a GitHub Release and attach `gai.sublime-package`. Download and unzip the workflow artifact container to obtain the actual `.sublime-package`.
+The release workflow builds on pushes to `master`, `dev/*`, and `v*` tags, and on manual dispatch. Branch/manual runs upload a workflow artifact. Tag runs require the tag to equal `v<VERSION>`, then create a GitHub Release and attach `gai.sublime-package`. This check concerns the plugin being built and is independent of the website's selected release. Download and unzip the workflow artifact container to obtain the actual `.sublime-package`.
 
 The release workflow runs the same tests and 95% coverage gate as PR CI on Python
 3.12 and 3.14, plus the separate release-tooling suite on Python 3.11:

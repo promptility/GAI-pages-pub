@@ -279,6 +279,15 @@ Use an absolute `operation.log_file` path when file output is needed. Console lo
 
 ## Keyboard shortcuts
 
+Shortcuts are disabled on first installation. Run **GAI: Enable keybindings ...**
+to enable them, or **GAI: Disable keybindings** to disable them. This saves
+`keybindings_enabled` in your user GAI settings (default: `false`) and takes
+effect immediately. Your custom sequences are preserved when disabling them.
+
+Use **GAI: Edit Keybindings ...** to open the GAI defaults and user settings side
+by side. Edit the `shortcuts` section in the user pane; opening the editor does
+not enable shortcuts.
+
 Set `shortcuts` at the root of your **user** `GAI.sublime-settings` object. Keys
 are GAI command names or dropdown paging actions; values are lists of sequential key presses. An empty
 list disables that command's shortcut. Unspecified commands retain the defaults
@@ -286,6 +295,7 @@ listed in the README. Changes apply immediately without restarting Sublime:
 
 ```json
 {
+    "keybindings_enabled": true,
     "shortcuts": {
         "generate_code_generator": ["ctrl+m", "g"],
         "edit_code_generator": ["ctrl+m", "e"],
@@ -305,8 +315,8 @@ buffers and do not intercept typing in palettes, console inputs, or panel inputs
 Edit, Instruct, Combined Edit, and Question shortcuts open their instruction
 palettes, preserving recent-prompt navigation.
 
-In GAI dropdown lists, **Page Up** and **Page Down** move the highlight by
-10 rows in the current filtered result order. Set `quick_panel_page_size` at the
+When keybindings are enabled, **Page Up** and **Page Down** in GAI dropdowns move
+the highlight by 10 rows in the current filtered result order. Set `quick_panel_page_size` at the
 root of GAI settings to change that distance (1–100 rows). Remap or disable the
 keys using `shortcuts.gai_quick_panel_page_up` and
 `shortcuts.gai_quick_panel_page_down`, with defaults `["pageup"]` and

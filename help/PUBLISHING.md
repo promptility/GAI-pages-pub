@@ -51,7 +51,8 @@ Upload with `aws s3 cp` as in the private guide, generate the release URL as `ht
 ## Submit to the default Package Control catalog
 
 The public homepage source lives in `website/` and is exported to a separate
-Pages repository on `v*` tag pushes or manual runs. See
+Pages repository through a manual **Publish website** workflow run after uploading
+the selected release archive to S3. See
 website setup and publishing for credentials, build-only
 testing, and destination configuration.
 

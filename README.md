@@ -28,7 +28,12 @@ windows use session identity tokens. Cloned views share a buffer choice.
 **GAI: Unset model ...** removes the cached choice. Clearing Sublime's cache is
 safe and restores normal defaults after reload. Credentials are never cached.
 
-Default shortcuts use **Ctrl+Shift+Y**, release it, then press:
+Keyboard shortcuts are disabled by default. Run **GAI: Enable keybindings ...**
+to enable them, or **GAI: Disable keybindings** to turn them off again.
+Use **GAI: Edit Keybindings ...** to edit the `shortcuts` section in your GAI
+user settings, with the defaults shown alongside.
+
+Once enabled, default shortcuts use **Ctrl+Shift+Y**, release it, then press:
 
 | Key | Command |
 |---|---|
@@ -48,7 +53,7 @@ Ctrl+M is already Sublime's **Jump to Matching Bracket** on all three platforms.
 Ctrl+Shift+Y is unused in the shipped default keymaps checked in Sublime build
 4215. Other installed packages or operating-system bindings may differ.
 See [shortcut configuration](https://github.com/promptility/GAI-pages-pub/blob/main/CONFIGURATION.md#keyboard-shortcuts) to change
-sequences in **GAI: Settings**, including using Ctrl+M if desired.
+sequences in **GAI: Edit Keybindings ...**, including using Ctrl+M if desired.
 
 ## Requirements
 

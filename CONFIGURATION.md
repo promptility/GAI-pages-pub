@@ -286,7 +286,9 @@ effect immediately. Your custom sequences are preserved when disabling them.
 
 Use **GAI: Edit Keybindings ...** to open the GAI defaults and user settings side
 by side. Edit the `shortcuts` section in the user pane; opening the editor does
-not enable shortcuts.
+not enable shortcuts. You can also use **Preferences → Package Settings → GAI →
+Key Bindings**. The same menu contains **Enable Keybindings** and **Disable
+Keybindings**.
 
 Set `shortcuts` at the root of your **user** `GAI.sublime-settings` object. Keys
 are GAI command names or dropdown paging actions; values are lists of sequential key presses. An empty

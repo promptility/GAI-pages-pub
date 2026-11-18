@@ -6,7 +6,7 @@ Public source hosting, a GitHub Release, a custom Package Control repository, an
 
 Create or select a **public** repository accessible without login. The repository root must be the package root, with `plugin.py`, `.python-version`, and `dependencies.json` directly under it. The installed package name is `GAI`, even if the source repository is named `sublime-GAI`.
 
-Prepare a new semantic version in `VERSION`, run tests and actual Sublime validation, build the archive, and publish a matching tag/release using [Releasing](https://github.com/promptility/GAI-pages-pub/blob/main/help/RELEASING.md). Keep generated `package-metadata.json`, caches, credentials, logs, and development environments out of the source repository. The current builder generates installation metadata only inside its archive.
+Prepare a new semantic version in `VERSION`, run tests and actual Sublime validation, build the archive, and publish a matching tag/release using [Releasing](https://github.com/promptility/GAI-pages-pub/blob/main/help/RELEASING.md). Keep generated `package-metadata.json`, caches, credentials, logs, and development environments out of the source repository. Release archives also omit installation metadata; Package Control generates it when installing.
 
 For code-hosting-only distribution, tell users to add the public Git repository URL in **Package Control: Add Repository**. They may need `package_name_map` to map `sublime-GAI` to `GAI`. This works independently of catalog approval; see [Installation](https://github.com/promptility/GAI-pages-pub/blob/main/help/INSTALLATION.md).
 
@@ -22,7 +22,7 @@ python3 scripts/make_repository.py --package dist/gai.sublime-package \
   --homepage https://github.com/YOUR_ACCOUNT/sublime-GAI
 ```
 
-The helper derives the version, minimum Sublime build, Python version, library list, and SHA-256 from the exact archive. Upload `repository.json` to a stable, publicly readable HTTPS URL. Add that URL to user `repositories`, then install **GAI**. The JSON format follows Package Control's schema-4 example.
+The helper reads `VERSION`, `.python-version`, and `dependencies.json` from the exact archive and computes its SHA-256. The minimum Sublime build defaults to `>=4213`; use `--sublime-text` if the selected release requires another range. It does not read or generate `package-metadata.json`. Upload `repository.json` to a stable, publicly readable HTTPS URL. Add that URL to user `repositories`, then install **GAI**. The JSON format follows Package Control's schema-4 example.
 
 The generator writes one release. Append earlier releases if you need history or separate compatibility ranges. Use a new version and immutable archive URL for each release. Upload the archive before updating the manifest. A public catalog crawler must be able to read both without a token, password, expiring capability URL, or interactive login.
 

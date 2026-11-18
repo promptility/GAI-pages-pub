@@ -31,7 +31,9 @@ safe and restores normal defaults after reload. Credentials are never cached.
 Keyboard shortcuts are disabled by default. Run **GAI: Enable keybindings ...**
 to enable them, or **GAI: Disable keybindings** to turn them off again.
 Use **GAI: Edit Keybindings ...** to edit the `shortcuts` section in your GAI
-user settings, with the defaults shown alongside.
+user settings, with the defaults shown alongside. These actions are also available
+under **Preferences → Package Settings → GAI**, including **Key Bindings** for
+customization.
 
 Once enabled, default shortcuts use **Ctrl+Shift+Y**, release it, then press:
 
@@ -61,6 +63,9 @@ sequences in **GAI: Edit Keybindings ...**, including using Ctrl+M if desired.
 - Current Package Control 4 with Python 3.14 library support, preferably 4.2.8 or newer. Use Sublime's **Install Package Control** command or its official installation instructions.
 - An API key and a model accepting GAI's Chat Completions payload. Provider accounts and API usage are separate from this plugin.
 - For MCP: an external Python environment with `mcp>=1.28,<2` and `pyzmq==27.1.0`. It is separate from Sublime's embedded interpreter.
+
+GAI includes Windows compatibility measures, including starting its MCP bridge
+without a console window. Windows support remains untested in Sublime Text.
 
 ## Start here
 

@@ -41,6 +41,20 @@ The requirements install Jinja2, Markdown, pytest, pytest-asyncio, pytest-timeou
 pytest-cov, pyzmq, and the supported MCP SDK v1 line. The SDK is constrained to `<2`
 because its v2 API differs. No vendor API keys or AWS credentials are required for the tests.
 
+## Isolated Sublime editor
+
+On Ubuntu 24.04 x86_64, install and launch a separate editor profile with:
+
+```bash
+python3 bench/tools/setup_sublime.py
+python3 bench/tools/run_sublime.py .
+```
+
+The scripts build and install this checkout without changing your normal editor.
+They also support headless validation through Xvfb. See the
+setup and launch instructions for prerequisites,
+library installation status, alternate paths, and local updates.
+
 ## Required coverage gate
 
 Merges to `master` and GitHub releases require **at least 95% application line

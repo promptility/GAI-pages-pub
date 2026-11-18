@@ -8,7 +8,7 @@
       "homepage": "https://promptility.github.io/GAI-pages-pub/",
       "releases": [
         {
-          "version": "1.1.0",
+          "version": "1.2.0",
           "date": "2026-10-31 03:00:00",
           "sublime_text": ">=4213",
           "python_versions": [
@@ -24,8 +24,8 @@
             "pyzmq",
             "Markdown"
           ],
-          "url": "https://sos-ch-dk-2.exo.io/promptility-assets/GAI/releases/v1.1.0/gai.sublime-package?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=EXO79309f0ee12d77aee4685818%2F20261112%2Fch-dk-2%2Fs3%2Faws4_request&X-Amz-Date=20261112T234109Z&X-Amz-Expires=17280000&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=5e6869c4a71e0bff10e9ec3ee7c6453bddd4346ac6c6ac21e193c6edf646fdaa",
-          "sha256": "e1d56b252a09f75723504795d274ff2060b523907f3ca019828b5a993aea1f21"
+          "url": "https://sos-ch-dk-2.exo.io/promptility-assets/GAI/releases/v1.2.0/gai.sublime-package?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=EXO79309f0ee12d77aee4685818%2F20261118%2Fch-dk-2%2Fs3%2Faws4_request&X-Amz-Date=20261118T203643Z&X-Amz-Expires=17280000&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=d5840663604c8baaa925fdbc909bc82418fd0b9051f3d5230a092da791663b75",
+          "sha256": "efe76b662645799bdebd0b02b76a093d65d1d1b91cc595314b6b491a21a21cb4"
         }
       ]
     }

@@ -2,8 +2,8 @@
 
 The package name is **GAI**, its author is **Promptility**, and its description
 is **General AI**. Use **Sublime Text build 4213 or newer**, with the Python 3.14
-plugin host, and **Package Control 4.2.8 or newer**. The downloadable archive's
-metadata requires build 4213 even though the catalog submission originally used
+plugin host, and **Package Control 4.2.8 or newer**. The repository release definition
+requires build 4213 even though the catalog submission originally used
 `>=4000`.
 
 Open the command palette with **Ctrl+Shift+P** (Windows/Linux) or **Cmd+Shift+P**
@@ -82,8 +82,11 @@ the manifest.
 4. Run **GAI: Settings** and configure your provider below.
 
 Avoid a conflicting unpacked `Packages/GAI` installation. Preserve your user
-settings in `Packages/User`. Direct archive copying does not configure an update
-source; use Option 2 for Package Control to manage this S3 release.
+settings in `Packages/User`. Manually copied archives do not include Package
+Control installation metadata and are treated as unmanaged packages. GAI still reads its version from `VERSION`,
+and **Satisfy Libraries** reads its requirements from `dependencies.json`.
+Direct archive copying does not configure an update source; use Option 2 for
+Package Control to manage this S3 release.
 
 ## Configure and verify GAI
 

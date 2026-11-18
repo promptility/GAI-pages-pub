@@ -32,9 +32,10 @@ replace it. Regenerate after adding further release changes.
 Tagged CI builds regenerate this file from the full Git history before packaging
 and use the same file as the GitHub Release body. Branch builds retain the
 checked-in notes. The builder itself works without Git and requires non-empty
-release notes. `package-metadata.json` is generated inside the archive, not
-tracked in source. Generated metadata declares Sublime build `>=4213` and Python
-`3.14`; keep repository release definitions consistent with those requirements.
+release notes. Do not include `package-metadata.json` in source or release archives;
+Package Control generates it during installation. Archives retain `VERSION`,
+`.python-version`, and `dependencies.json`. Repository release definitions declare
+Sublime build `>=4213` and Python `3.14`; keep those requirements consistent.
 
 ## Test before packaging
 
@@ -66,7 +67,7 @@ bash release_package.sh dist/gai.sublime-package
 
 With no output argument it creates `gai.sublime-package` in the current directory. Relative and absolute output paths are accepted; parent directories are created. On Windows, use `py -3 scripts/build_release.py dist/gai.sublime-package` or the selected Python executable.
 
-The archive includes the plugin entry point, `.python-version`, Python sources under `gai`, settings, command palette, `Main.sublime-menu`, library manifest, generated metadata, README/configuration/help documents, `VERSION` and `RELEASE_NOTES.md`, and example JSON/Python files. It excludes tests, CI files, `.git`, chat histories, virtual environments, logs, and bytecode. Libraries are declared rather than vendored; the external MCP SDK is installed separately.
+The archive includes the plugin entry point, `.python-version`, Python sources under `gai`, settings, command palette, `Main.sublime-menu`, library manifest, README/configuration/help documents, `VERSION` and `RELEASE_NOTES.md`, and example JSON/Python files. It excludes tests, CI files, `.git`, chat histories, virtual environments, logs, and bytecode. Libraries are declared rather than vendored; the external MCP SDK is installed separately.
 
 ## Inspect and checksum
 
@@ -76,7 +77,7 @@ python3 -m zipfile -t dist/gai.sublime-package
 python3 -c "import hashlib,pathlib; print(hashlib.sha256(pathlib.Path('dist/gai.sublime-package').read_bytes()).hexdigest())"
 ```
 
-Check for `plugin.py`, `gai/async_worker.py`, `.python-version`, `dependencies.json`, `Main.sublime-menu`, and `package-metadata.json` at the archive root. Use the checksum when writing a Package Control repository definition; rebuilds can have different ZIP timestamps, so checksum the exact uploaded artifact.
+Check for `plugin.py`, `gai/async_worker.py`, `.python-version`, `dependencies.json`, `Main.sublime-menu`, and `VERSION` at the archive root. Confirm `package-metadata.json` is absent. Use the checksum when writing a Package Control repository definition; rebuilds can have different ZIP timestamps, so checksum the exact uploaded artifact.
 
 ## GitHub workflow and tag publication
 
